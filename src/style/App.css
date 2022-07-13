@@ -1,0 +1,43 @@
+body{
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Fira Sans',sans-serif;
+  background: rgb(0,34,150);
+  background: linear-gradient(60deg, rgba(0,34,150,1) 0%, rgba(130,0,143,1) 13%, rgba(192,0,122,1) 28%, 
+  rgba(234,12,95,1) 47%, rgba(255,83,65,1) 61%, rgba(255,136,32,1) 75%, rgba(246,186,0,1) 100%);
+  background-attachment: fixed;
+}
+
+::-webkit-input-placeholder {color: white;} 
+::-moz-placeholder { color: white;} 
+:-ms-input-placeholder { color: white;} 
+:-moz-placeholder {color: white;} 
+
+
+.coloumn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.coloumn2{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 150px;
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.row2{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
