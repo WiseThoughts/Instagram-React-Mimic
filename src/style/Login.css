@@ -1,28 +1,8 @@
 
 
-.coloumn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.coloumn2{
-    display: flex;
-    flex-direction: column;
-}
-
-.row{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-.row2{
-    display: flex;
-    flex-direction: row;
-}
-
 .formPlacement{
+    justify-content: center;
+    align-items: center;
     padding-top: 300px;
 }
 
@@ -51,3 +31,10 @@
     background: #c0007a;
 }
 
+.loginPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50%;
+}

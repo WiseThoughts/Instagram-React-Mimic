@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { logIn, signUp } from "../utils/fetch";
+import { signUp, tokenFetch } from "../utils/fetch";
 import "../style/Login.css"
 
 const Login = ({ setter, user }) => {
@@ -9,21 +9,28 @@ const Login = ({ setter, user }) => {
   const [password, setPassword] = useState();
   const [logBool, setLogBool] = useState(false);
 
+  useEffect(()=>{
+    if (localStorage.key("myToken")){
+      tokenFetch(setter);
+    }
+  },[]);
+
+
   const submitSignUp = async (e) => {
     e.preventDefault();
     await signUp({ username, email, password }, setter);
   };
 
-  const submitLogin = async (e) => {
-    e.preventDefault();
-    await logIn({ username, password }, setter);
-  };
+  // const submitLogin = async (e) => {
+  //   e.preventDefault();
+  //   await logIn({ username, password }, setter);
+  // };
 
 
   return (
-    <div>
+    <div className="loginPage">
       {user && <Navigate to="/home" />}
-      <form className="coloumn formPlacement" onSubmit={logBool ? submitLogin : submitSignUp}>
+      <form className="coloumn formPlacement" onSubmit={submitSignUp}>
         <input className="inputBox" onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
         <div className="boxSpacing">
         {!logBool && <input id="email" className="inputBox" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />}

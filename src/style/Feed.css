@@ -1,9 +1,12 @@
-
+.spacer{
+    background-color: transparent;
+    padding: 44.5px;
+}
 
 .imgFeed{
     width: 40%;
     border: 2px solid white;
-    margin: 10px;
+    margin: 0px 10px 10px 10px;
 }
 
 ul li{
@@ -30,6 +33,12 @@ ul li{
 .feedDisplayRight{
     justify-content: flex-start;
     flex-basis: 33.33%;
+    position: fixed;
+    padding-top: 33px;
+    color: white;
+}
+.feedProfilePosition{
+    padding-left: 700%;
 }
 
 .feedIcons{
@@ -37,7 +46,27 @@ ul li{
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 0px 8px 5px 0px;
+    padding: 0px 12px 5px 0px;
     color: white;
     font-size: 25px;
 }
+.feedIconsLeft{
+    display: flex;
+}
+
+.author{
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    padding-top: 50px;
+    padding-right: 15px;
+}
+
+.words{
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    font-size: 15px;
+    width: 40%;
+}
+

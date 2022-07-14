@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import Nav from "./nav"
 import Posts from "./posts"
 import "../style/Feed.css"
@@ -7,6 +8,7 @@ import "../style/Feed.css"
 const Feed = ({ user }) => {
   const [photos, setPhotos] = useState([]);
   const [profilePic, setProfilePic] = useState([]);
+
 
 
   const profileAvatar = async () => {
@@ -28,11 +30,14 @@ const Feed = ({ user }) => {
     fetchPhotos(setPhotos);
   }, []);
 
+
   return (<div>
 
     <div>
       <Nav />
     </div>
+
+    <div className="spacer"/>
 
       <div className="feedHeader">
       <h1>Welcome {user}! This is today's feed!</h1>
@@ -41,13 +46,13 @@ const Feed = ({ user }) => {
 <div className="container">
     <div className="feedDisplayLeft coloumn">
       {photos.map((item, i) => {
-        return <Posts className="" key={i} url={item.download_url} />;
+        return <Posts key={i} author={item.author} url={item.download_url} words={item.words} />;
       })}
       
     </div>
 
   <div className="feedDisplayRight">
-    <div className="row">
+    <div className="row feedProfilePosition">
     <img src={profilePic} alt="profile logo"/>
     <h4>Username:{user}</h4>
     </div>

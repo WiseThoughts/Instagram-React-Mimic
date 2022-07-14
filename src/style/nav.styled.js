@@ -4,9 +4,10 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: #424651;
+    background-color: #82008f;
     padding: 30px;
     width: 96vw;
+    position: fixed;
 `;
 
 export const NavbarItems = styled.a`
