@@ -12,7 +12,7 @@ const Feed = ({ user }) => {
 
 
   const profileAvatar = async () => {
-    const res = await fetch("https://picsum.photos/200");
+    const res = await fetch(process.env.REACT_APP_PIC);
     const data = await res.json();
     return data;
   };
@@ -21,7 +21,7 @@ const Feed = ({ user }) => {
   }, []);
 
   const fetchPhotos = async (setter) => {
-      const res = await fetch("https://picsum.photos/v2/list");
+      const res = await fetch(process.env.REACT_APP_PICS);
       const data = await res.json();
       setter(data);
   };
