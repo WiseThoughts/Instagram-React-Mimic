@@ -6,13 +6,13 @@ export const Wrapper = styled.div`
     align-items: center;
     background-color: #82008f;
     padding: 30px;
-    width: 96vw;
+    width: 100%;
     position: fixed;
 `;
 
 export const NavbarItems = styled.a`
     font-size: 25px;
-    margin-right: 25px;
+    padding-right: 15px;
     color: white;
     &:hover {
         opacity: 0.5;

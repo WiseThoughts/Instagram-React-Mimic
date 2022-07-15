@@ -1,17 +1,107 @@
+// export const signUp = async (signObj, setter) => {
+//   try {
+//     let path = process.env.REACT_APP_REST_API; //grabs url from env 
+//     if (signObj.email){
+//       path += "user"; //if email there (true) add user to the end of the env path
+//     }else{
+//       path += "login";  //if email not there (false) add login to the end of the env path
+//     }
+//     const response = await fetch(path, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(signObj),
+//     });
+//     const data = await response.json();
+//     setter(data.user.username);
+//     localStorage.setItem("myToken", data.token);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// // export const logIn = async (signObj, setter) => {
+// //   try {
+// //     const response = await fetch("http://localhost:5001/login", {
+// //       method: "POST",
+// //       headers: { "Content-Type": "application/json" },
+// //       body: JSON.stringify(signObj),
+// //     });
+// //     const data = await response.json();
+// //     setter(data.user.username);
+// //   } catch (error) {
+// //     console.log(error);
+// //   }
+// // };
+
+// export const tokenFetch = async(setter)=>{
+//   try{
+//     const res = await fetch(`${process.env.REACT_APP_REST_API}user`,{
+//       method: "GET",
+//       headers: {Authorization: localStorage.getItem("myToken")},
+//     });
+//     const data = await res.json();
+//     setter(data.user.username)
+//   }catch(error){
+//     console.log("token fecth error", error)
+//   }
+// }
+
+// export const updateFetch = async (filterObj, updateObj, setter) => {
+//   try {
+//     const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+//       method: "PUT",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({
+//         filterObj,
+//         updateObj,
+//       }),
+//     });
+//     const data = await res.json();
+//     if (data.msg !== "Successfully Updated") {
+//       throw new Error(data.msg);
+//     }
+//     if (updateObj.username) {
+//       setter(updateObj.username);
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// export const deleteFetch = async (setter) => {
+//   try {
+//     const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+//       method: "DELETE",
+//       headers: { Authorization: localStorage.getItem("myToken") },
+//     });
+//     const data = await res.json();
+//     if (data.msg !== "Successfully Deleted") {
+//       throw new Error(data.msg);
+//     } else {
+//       setter();
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+
+
+
 export const signUp = async (signObj, setter) => {
   try {
-    let path = process.env.REACT_APP_REST_API; //grabs url from env 
-    if (signObj.email){
-      path += "user"; //if email there (true) add user to the end of the env path
-    }else{
-      path += "login";  //if email not there (false) add login to the end of the env path
+    let path = process.env.REACT_APP_REST_API; //grab url from .env file http://localhost:5001/
+    if (signObj.email) {
+      path += "user"; //add user to localhost path
+    } else {
+      path += "login"; //add login to localhost path
     }
-    const response = await fetch(path, {
+    const res = await fetch(path, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(signObj),
     });
-    const data = await response.json();
+    const data = await res.json();
     setter(data.user.username);
     localStorage.setItem("myToken", data.token);
   } catch (error) {
@@ -19,32 +109,19 @@ export const signUp = async (signObj, setter) => {
   }
 };
 
-// export const logIn = async (signObj, setter) => {
-//   try {
-//     const response = await fetch("http://localhost:5001/login", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(signObj),
-//     });
-//     const data = await response.json();
-//     setter(data.user.username);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
 
-export const tokenFetch = async(setter)=>{
-  try{
-    const res = await fetch(`${process.env.REACT_APP_REST_API}user`,{
+export const tokenFetch = async (setter) => {
+  try {
+    const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "GET",
-      headers: {Authorization: localStorage.getItem("myToken")},
+      headers: { Authorization: localStorage.getItem("myToken") },
     });
     const data = await res.json();
-    setter(data.user.username)
-  }catch(error){
-    console.log("token fecth error", error)
+    setter(data.user.username);
+  } catch (error) {
+    console.log(error);
   }
-}
+};
 
 export const updateFetch = async (filterObj, updateObj, setter) => {
   try {

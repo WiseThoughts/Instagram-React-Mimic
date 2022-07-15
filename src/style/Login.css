@@ -30,6 +30,10 @@
     border: 2px solid white;
     background: #c0007a;
 }
+.formButtons:hover{
+    cursor: pointer;
+}
+
 
 .loginPage{
     display: flex;

@@ -22,6 +22,7 @@ ul li{
     height: 100px;
     background: #c0007a;
     border: 3px solid white;
+    cursor: default;
 }
 
 .container{
@@ -38,7 +39,22 @@ ul li{
     color: white;
 }
 .feedProfilePosition{
-    padding-left: 700%;
+    padding-left: 600%;
+    width: fit-content;
+}
+
+.feedUsername{
+    font-size: 20px;
+}
+.feedLogOut{
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    height: 40px;
+    width: 106px;
+    border-radius: 6px;
+    border: 2px solid white;
+    background: #c0007a;
 }
 
 .feedIcons{
@@ -68,5 +84,12 @@ ul li{
     color: white;
     font-size: 15px;
     width: 40%;
+    cursor: default;
 }
 
+.feedIcons:hover{
+    cursor: pointer;
+}
+.feedLogOut:hover{
+    cursor: pointer;
+}

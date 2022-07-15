@@ -1,7 +1,8 @@
 
-
-
-
 ul li{
     list-style: none;
+}
+
+.navPaddingRight{
+    padding-right: 50px;
 }

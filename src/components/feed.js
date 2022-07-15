@@ -5,20 +5,9 @@ import Posts from "./posts"
 import "../style/Feed.css"
 
 
-const Feed = ({ user }) => {
+const Feed = ({ user, setter, profilePic }) => {
   const [photos, setPhotos] = useState([]);
-  const [profilePic, setProfilePic] = useState([]);
 
-
-
-  const profileAvatar = async () => {
-    const res = await fetch(process.env.REACT_APP_PIC);
-    const data = await res.json();
-    return data;
-  };
-  useEffect(()=>{
-    profileAvatar(setProfilePic);
-  }, []);
 
   const fetchPhotos = async (setter) => {
       const res = await fetch(process.env.REACT_APP_PICS);
@@ -29,6 +18,8 @@ const Feed = ({ user }) => {
   useEffect(() => {
     fetchPhotos(setPhotos);
   }, []);
+
+
 
 
   return (<div>
@@ -52,15 +43,23 @@ const Feed = ({ user }) => {
     </div>
 
   <div className="feedDisplayRight">
-    <div className="row feedProfilePosition">
-    <img src={profilePic} alt="profile logo"/>
-    <h4>Username:{user}</h4>
+    <div className="feedUsername row feedProfilePosition">
+    <img className="profileImage" src={profilePic} alt="profile logo"/>
+    <h4>Username:<br/>{user}</h4>
+    </div>
+
+    <div className="feedProfilePosition">
+    <button className="feedLogOut" onClick={() => {
+          setter();
+          localStorage.removeItem("myToken");
+          }} >Log Out</button>
     </div>
 
   </div>
+  
 </div>
 
-    </div>
+</div>
   );
 };
 

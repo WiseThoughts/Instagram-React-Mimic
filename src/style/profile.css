@@ -1,0 +1,78 @@
+
+
+.profileContainerMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 100vw;
+    color: white;
+}
+
+.profileContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileImage{
+    height: 100px;
+    background-color: #c0007a;
+    border: 3px solid white;
+    border-radius: 25%;
+}
+
+
+.PFF{
+    padding: 5px;
+    cursor: pointer;
+    height: 15px;
+}
+.PFF:hover{
+    text-decoration: underline;
+    background: #002296;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.inputBoxProfile{
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: #c0007a;
+}
+
+.formButtonsProfileUpdate{
+    color: white;
+    padding: 10px;
+    height: 40px;
+    width: max-content;
+    border-radius: 6px;
+    border: 2px solid white;
+    background: #c0007a;
+}
+.formButtonsProfileDelete{
+    color: white;
+    padding: 10px;
+    height: 40px;
+    border-radius: 6px;
+    border: 2px solid white;
+    background: #c0007a;
+    width: max-content;
+}
+
+.formButtonsProfileDelete:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    background: #002296;
+}
+.formButtonsProfileUpdate:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    background: #002296;
+}

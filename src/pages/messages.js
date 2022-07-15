@@ -9,6 +9,7 @@ return (<div>
     <div>
         <Nav />
     </div>
+    <div className="spacer"/>
 
     <div>
         <h1>Message Page</h1>
