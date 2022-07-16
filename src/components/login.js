@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { signUp, tokenFetch } from "../utils/fetch";
+import { signUp, tokenFetch, LogIn } from "../utils/fetch";
 import "../style/Login.css"
 
 const Login = ({ setter, user }) => {
@@ -21,16 +21,16 @@ const Login = ({ setter, user }) => {
     await signUp({ username, email, password }, setter);
   };
 
-  // const submitLogin = async (e) => {
-  //   e.preventDefault();
-  //   await logIn({ username, password }, setter);
-  // };
+  const submitLogin = async (e) => {
+    e.preventDefault();
+    await LogIn({ username, password }, setter);
+  };
 
 
   return (
     <div className="loginPage">
       {user && <Navigate to="/home" />}
-      <form className="coloumn formPlacement" onSubmit={submitSignUp}>
+      <form className="coloumn formPlacement" onSubmit={logBool ? submitLogin : submitSignUp}>
         <input className="inputBox" onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
         <div className="boxSpacing">
         {!logBool && <input id="email" className="inputBox" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />}
